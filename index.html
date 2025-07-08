@@ -752,28 +752,42 @@
             </div>
 
             <div class="contact-form">
-                <form class="space-y-6">
+                <form name="contact"
+                        method="POST"
+                        data-netlify="true"
+                        netlify-honeypot="bot-field"
+                        class="space-y-6">
+                  <!-- Netlify がフォームを検出する hidden 要素 -->
+            <input type="hidden" name="form-name" value="contact" />
+
+                  <!-- スパム BOT 対策の honeypot（画面には出ません）-->
+               <p class="hidden">
+                 <label>Don’t fill this out if you're human:
+                 <input name="bot-field" />
+                </label>
+               </p>
+
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
                             <label class="block text-sm font-medium text-gray-700 mb-2">お名前 *</label>
-                            <input type="text" required class="form-input">
+                            <input type="text"  name="name"   required class="form-input">
                         </div>
                         <div>
                             <label class="block text-sm font-medium text-gray-700 mb-2">会社名</label>
-                            <input type="text" class="form-input">
+                            <input type="text"  name="name"   required class="form-input">
                         </div>
                     </div>
 
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
                             <label class="block text-sm font-medium text-gray-700 mb-2">メールアドレス *</label>
-                            <input type="email" required class="form-input">
+                            <input type="email" name="email"  required class="form-input">
                         </div>
                     </div>
 
                     <div>
                         <label class="block text-sm font-medium text-gray-700 mb-2">施設の状況 *</label>
-                        <select required class="form-select">
+                        <select name="facility_status" required class="form-select">
                             <option value="">選択してください</option>
                             <option value="operating-new">運営中（1年未満）</option>
                             <option value="operating-established">運営中（1年以上）</option>
@@ -785,7 +799,7 @@
 
                     <div>
                         <label class="block text-sm font-medium text-gray-700 mb-2">ご相談内容 *</label>
-                        <select required class="form-select">
+                        <select name="request_status" required class="form-select">
                             <option value="">選択してください</option>
                             <option value="free-diagnosis">無料診断・相談</option>
                             <option value="detailed-consultation">詳細サービス説明</option>
@@ -796,7 +810,7 @@
 
                     <div>
                         <label class="block text-sm font-medium text-gray-700 mb-2">現在の運営課題・ご質問</label>
-                        <textarea rows="5" class="form-textarea" placeholder="現在お困りの運営課題（稼働率、売上、コスト等）や、ご質問などがございましたらお聞かせください"></textarea>
+                        <textarea name="message" rows="5" class="form-textarea" placeholder="現在お困りの運営課題（稼働率、売上、コスト等）や、ご質問などがございましたらお聞かせください"></textarea>
                     </div>
 
                     <div class="text-center">
