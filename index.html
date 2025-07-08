@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>グランピング施設の売上改善法則 - HandS株式会社</title>
+    <meta name="description" content="現役経営者による実践的なグランピング施設の運営改善・成長支援サービス。3年連続売上・稼働率向上の実績をもとに、目標達成まで完全伴走いたします。">
+    
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            font-family: 'Noto Sans JP', sans-serif;
+        }
+        
+        .hero-bg {
+            background: linear-gradient(135deg, rgba(0,0,0,0.3), rgba(0,0,0,0.1)), url('https://page1.genspark.site/v1/base64_upload/634e7eb874c0e6c455495c73031b182f');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            padding-top: 80px;
+            position: relative;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .success-bg {
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+        }
+        
+        .cta-bg {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ffa726 100%);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .stats-counter {
+            font-size: 3rem;
+            font-weight: 900;
+            color: #ffffff;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ffa726 100%);
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            color: white;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(255,107,107,0.3);
+            color: white;
+            text-decoration: none;
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid #667eea;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            color: #667eea;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .btn-secondary:hover {
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+        }
+        
+        .problem-icon {
+            font-size: 3rem;
+            color: #ff6b6b;
+            margin-bottom: 1rem;
+        }
+        
+        .solution-icon {
+            font-size: 2.5rem;
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+        
+        .feature-card {
+            background: white;
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            height: 100%;
+        }
+        
+        .testimonial-card {
+            background: white;
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-left: 4px solid #38ef7d;
+        }
+        
+        .contact-form {
+            background: white;
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        input, textarea, select {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 0.5rem;
+            transition: border-color 0.3s ease;
+        }
+        
+        input:focus, textarea:focus, select:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.6s ease forwards;
+        }
+        
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .stagger-1 { animation-delay: 0.1s; }
+        .stagger-2 { animation-delay: 0.2s; }
+        .stagger-3 { animation-delay: 0.3s; }
+        .stagger-4 { animation-delay: 0.4s; }
+        
+        .comparison-arrow {
+            font-size: 3rem;
+            color: #667eea;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        
+        .gap-text {
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: nowrap;
+        }
+        
+        .gap-icon {
+            font-size: 1.5rem;
+            color: #ff6b6b;
+            margin-right: 0.5rem;
+        }
+        
+        .support-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .price-highlight {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ffa726 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px rgba(255,107,107,0.3);
+        }
+
+        .price-amount {
+            font-size: 4rem;
+            font-weight: 900;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .footer {
+            background: #2d3748;
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .hero-title-top {
+            position: absolute;
+            top: 120px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            z-index: 10;
+        }
+
+        .hero-title-box {
+            background: transparent;
+            border-radius: 1rem;
+            padding: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-cta-bottom {
+            position: absolute;
+            bottom: 100px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            z-index: 10;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-bg {
+                background-attachment: scroll;
+                padding-top: 100px;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .stats-counter {
+                font-size: 2.5rem;
+            }
+            
+            .hero-title-top {
+                top: 100px;
+                padding: 0 1rem;
+            }
+
+            .hero-title-box {
+                padding: 1.5rem;
+            }
+
+            .hero-cta-bottom {
+                bottom: 80px;
+                padding: 0 1rem;
+            }
+            
+            .comparison-arrow {
+                font-size: 2rem;
+                transform: rotate(90deg);
+            }
+            
+            .gap-text {
+                white-space: normal;
+                flex-wrap: wrap;
+            }
+
+            .price-amount {
+                font-size: 3rem;
+            }
+        }
+        
+        @media (max-width: 640px) {
+            .hero-bg {
+                padding-top: 120px;
+            }
+            
+            .hero-title-top h1 {
+                font-size: 2.5rem !important;
+                line-height: 1.1;
+            }
+
+            .hero-title-box {
+                padding: 1rem;
+            }
+
+            .hero-cta-bottom {
+                bottom: 60px;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white shadow-lg z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0">
+                    <h2 class="text-2xl font-bold text-gray-900">HandS株式会社</h2>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#services" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">サービス</a>
+                        <a href="#features" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">特徴</a>
+                        <a href="#results" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">実績</a>
+                        <a href="#contact" class="btn-primary text-sm">無料相談</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-bg min-h-screen flex items-center justify-center text-white relative">
+        <!-- Title in sky area -->
+        <div class="hero-title-top">
+            <div class="hero-title-box fade-in">
+                <h1 class="text-4xl md:text-6xl font-bold text-white drop-shadow-lg">
+                    グランピング施設の<br>
+                    <span class="text-yellow-400">売上改善法則</span>
+                </h1>
+            </div>
+        </div>
+        
+        <!-- CTA button at bottom -->
+        <div class="hero-cta-bottom">
+            <a href="#contact" class="btn-primary text-lg px-8 py-4">
+                まずは無料相談してみる
+            </a>
+        </div>
+        
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <i class="fas fa-chevron-down text-white text-2xl"></i>
+        </div>
+    </section>
+
+    <!-- Problem/Empathy Section -->
+    <section class="py-20 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="section-title text-gray-900">グランピング施設、思い描いた通りの成果が出ていますか？</h2>
+                <div class="gap-text text-xl text-gray-600 max-w-4xl mx-auto">
+                    <i class="fas fa-trending-down gap-icon"></i>
+                    <span>運営を始めた時の期待と現在の売上・稼働率のギャップに多くの事業者様が直面しています</span>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+                <div class="bg-white rounded-xl p-6 text-center shadow-lg fade-in stagger-1">
+                    <svg class="w-12 h-12 mx-auto mb-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3 21L21 3M3 3L8 8L12 4L16 8L21 3V12" stroke="#ff6b6b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M3 21V12L8 17L12 13L16 17L21 12V21H3Z" fill="#ff6b6b" fill-opacity="0.2"/>
+                    </svg>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">稼働率の低迷</h3>
+                </div>
+                <div class="bg-white rounded-xl p-6 text-center shadow-lg fade-in stagger-2">
+                    <i class="fas fa-users-slash problem-icon"></i>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">オペレーション非効率</h3>
+                </div>
+                <div class="bg-white rounded-xl p-6 text-center shadow-lg fade-in stagger-3">
+                    <i class="fas fa-money-bill-wave problem-icon"></i>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">集客コスト増大</h3>
+                </div>
+                <div class="bg-white rounded-xl p-6 text-center shadow-lg fade-in stagger-4">
+                    <i class="fas fa-cloud-rain problem-icon"></i>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">収益の不安定性</h3>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <p class="text-lg text-gray-700 max-w-4xl mx-auto">
+                    私たちHandS株式会社のメンバーも、多くの宿泊・サービス業界での経験を通じて、<br>
+                    これらの運営課題に何度も直面してきました。<br>
+                    <strong class="text-blue-600">だからこそ発見した、確実に改善する成功の法則があります。</strong>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section id="services" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="section-title text-gray-900">プロフェッショナル集団による「施設改善支援サービス」</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    ホテル支配人×マーケター×店舗オーナーの専門性を統合した運営改善特化の支援体制
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+                <div class="feature-card card-hover text-center fade-in stagger-1">
+                    <i class="fas fa-bullseye solution-icon"></i>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">稼働率向上コンサルティング</h3>
+                    <p class="text-gray-600 mb-6">マーケター×店舗オーナーの実践ノウハウ</p>
+                    <ul class="text-left space-y-2 text-gray-600">
+                        <li><i class="fas fa-check text-blue-500 mr-2"></i>既存顧客分析と新規獲得戦略</li>
+                        <li><i class="fas fa-check text-blue-500 mr-2"></i>競合差別化とポジショニング再構築</li>
+                        <li><i class="fas fa-check text-blue-500 mr-2"></i>効果的な集客チャネルの最適化</li>
+                        <li><i class="fas fa-check text-blue-500 mr-2"></i>価格戦略とリピート率向上施策</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card card-hover text-center fade-in stagger-2">
+                    <i class="fas fa-cogs solution-icon"></i>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">オペレーション効率化コンサルティング</h3>
+                    <p class="text-gray-600 mb-6">ホテル支配人×店舗オーナーの改善経験</p>
+                    <ul class="text-left space-y-2 text-gray-600">
+                        <li><i class="fas fa-check text-blue-500 mr-2"></i>現場業務の無駄削減と標準化</li>
+                        <li><i class="fas fa-check text-blue-500 mr-2"></i>人件費削減と品質向上の両立</li>
+                        <li><i class="fas fa-check text-blue-500 mr-2"></i>システム導入による自動化推進</li>
+                        <li><i class="fas fa-check text-blue-500 mr-2"></i>顧客満足度向上と口コミ改善</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card card-hover text-center fade-in stagger-3">
+                    <i class="fas fa-hands-helping solution-icon"></i>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">集客業務代行</h3>
+                    <p class="text-gray-600 mb-6">運営に集中できる環境を提供</p>
+                    <ul class="text-left space-y-2 text-gray-600">
+                        <li><i class="fas fa-check text-blue-500 mr-2"></i>SNS運用・コンテンツ制作代行</li>
+                        <li><i class="fas fa-check text-blue-500 mr-2"></i>プロによる写真撮影・動画制作</li>
+                        <li><i class="fas fa-check text-blue-500 mr-2"></i>広告運用・効果分析・改善</li>
+                        <li><i class="fas fa-check text-blue-500 mr-2"></i>予約対応・顧客レビュー管理</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Comparison Section -->
+            <div class="bg-gradient-to-r from-purple-600 to-blue-600 rounded-2xl p-8 text-white">
+                <h3 class="text-3xl font-bold text-center mb-8">他社との決定的な違い：成果が出るまで完全伴走</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+                    <div class="text-center bg-white bg-opacity-20 rounded-xl p-6 backdrop-blur">
+                        <div class="text-red-300 mb-4">
+                            <i class="fas fa-times-circle text-4xl"></i>
+                        </div>
+                        <h4 class="font-bold text-xl mb-2">一般的なコンサルタント</h4>
+                        <p class="text-sm">改善提案書を出して終了</p>
+                    </div>
+                    <div class="text-center">
+                        <i class="fas fa-arrow-right comparison-arrow"></i>
+                    </div>
+                    <div class="text-center bg-white bg-opacity-20 rounded-xl p-6 backdrop-blur">
+                        <div class="text-yellow-300 mb-4">
+                            <i class="fas fa-check-circle text-4xl"></i>
+                        </div>
+                        <h4 class="font-bold text-xl mb-2">弊社の支援体制</h4>
+                        <p class="text-sm">売上・稼働率改善まで並走サポート</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features/Benefits Section -->
+    <section id="features" class="py-20 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="section-title text-gray-900">圧倒的な差別化ポイント</h2>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+                <div class="bg-white rounded-2xl p-8 shadow-xl">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+                        <i class="fas fa-trophy text-yellow-500 mr-3"></i>
+                        自社施設で実証済みの改善実績
+                    </h3>
+                    <img src="https://cdn1.genspark.ai/user-upload-image/22_generated/716578ef-a726-48d2-aaba-678bd07a5059" alt="オペレーション効率化" class="w-full rounded-lg mb-4">
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            自社施設で3年連続売上・稼働率向上を実現
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            机上の空論ではない、現場で証明済みノウハウ
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            市場変化に対応したリアルタイム改善戦略
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-white rounded-2xl p-8 shadow-xl">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+                        <i class="fas fa-users text-blue-500 mr-3"></i>
+                        運営改善に特化したプロ集団
+                    </h3>
+                    <img src="https://kenjins.jp/magazine/wp-content/uploads/2024/08/%E6%83%85%E5%A0%B1%E3%83%AA%E3%83%86%E3%83%A9%E3%82%B7%E3%83%BC.jpg" alt="プロフェッショナルチーム" class="w-full rounded-lg mb-4">
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            ホテル支配人：運営効率化・収益改善の専門知識
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            マーケター：集客改善・売上向上の実践経験
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            店舗オーナー：現場運営・利益確保の現実感覚
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Statistics -->
+            <div id="results" class="success-bg rounded-2xl p-8 text-white">
+                <h3 class="text-3xl font-bold text-center mb-8">定量的な改善実績</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                    <div>
+                        <div class="stats-counter" data-target="270" data-suffix="%">270%</div>
+                        <p class="text-xl">自社施設売上成長率<br>（月平均）</p>
+                    </div>
+                    <div>
+                        <div class="stats-counter" data-target="80" data-suffix="%">80%</div>
+                        <p class="text-xl">稼働率向上<br>（35% → 80%）</p>
+                    </div>
+                    <div>
+                        <div class="stats-counter" data-target="6" data-suffix="ヶ月">6ヶ月</div>
+                        <p class="text-xl">平均改善期間<br>（支援開始から効果実感まで）</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="section-title text-gray-900">確実な改善を生む4段階プロセス</h2>
+                <p class="text-xl text-gray-600">現状分析→改善戦略→実行支援→効果検証の循環で売上・稼働率向上まで完全サポート</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white rounded-xl p-6 text-center shadow-lg card-hover">
+                    <div class="bg-purple-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl font-bold text-purple-600">1</span>
+                    </div>
+                    <h3 class="font-bold text-gray-900 mb-3">現状分析・課題特定</h3>
+                    <p class="text-sm text-gray-600 mb-4">初回相談・無料</p>
+                    <ul class="text-xs text-gray-600 text-left space-y-1">
+                        <li>• 売上・稼働率の詳細分析</li>
+                        <li>• 運営コスト・効率性診断</li>
+                        <li>• 競合比較・市場ポジション調査</li>
+                        <li>• 具体的改善提案書を無料提供</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white rounded-xl p-6 text-center shadow-lg card-hover">
+                    <div class="bg-purple-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl font-bold text-purple-600">2</span>
+                    </div>
+                    <h3 class="font-bold text-gray-900 mb-3">改善戦略・実行計画策定</h3>
+                    <p class="text-sm text-gray-600 mb-4">契約後1ヶ月目</p>
+                    <ul class="text-xs text-gray-600 text-left space-y-1">
+                        <li>• 売上・稼働率向上の目標設定</li>
+                        <li>• 集客強化とコスト削減計画</li>
+                        <li>• 実行スケジュール・優先順位決定</li>
+                        <li>• 詳細改善プランの完成</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white rounded-xl p-6 text-center shadow-lg card-hover">
+                    <div class="bg-purple-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl font-bold text-purple-600">3</span>
+                    </div>
+                    <h3 class="font-bold text-gray-900 mb-3">実行支援・進捗管理</h3>
+                    <p class="text-sm text-gray-600 mb-4">2ヶ月目〜</p>
+                    <ul class="text-xs text-gray-600 text-left space-y-1">
+                        <li>• 改善施策の実行並走サポート</li>
+                        <li>• 週次効果測定・課題解決</li>
+                        <li>• リアルタイム戦略調整</li>
+                        <li>• 着実な成果創出</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white rounded-xl p-6 text-center shadow-lg card-hover">
+                    <div class="bg-purple-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl font-bold text-purple-600">4</span>
+                    </div>
+                    <h3 class="font-bold text-gray-900 mb-3">効果検証・継続改善</h3>
+                    <p class="text-sm text-gray-600 mb-4">目標達成まで</p>
+                    <ul class="text-xs text-gray-600 text-left space-y-1">
+                        <li>• 売上・稼働率改善効果測定</li>
+                        <li>• 次期成長戦略の策定・実行</li>
+                        <li>• 新たな改善ポイントへの対応</li>
+                        <li>• 持続的成長の実現</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Support System Section -->
+    <section class="py-20 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="section-title text-gray-900">充実のサポート体制</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-xl p-8 text-center shadow-lg card-hover">
+                    <i class="fas fa-users support-icon text-blue-500"></i>
+                    <h3 class="text-xl font-bold text-gray-900">専任チーム制</h3>
+                </div>
+
+                <div class="bg-white rounded-xl p-8 text-center shadow-lg card-hover">
+                    <i class="fas fa-comments support-icon text-green-500"></i>
+                    <h3 class="text-xl font-bold text-gray-900">柔軟な相談体制</h3>
+                </div>
+
+                <div class="bg-white rounded-xl p-8 text-center shadow-lg card-hover">
+                    <i class="fas fa-shield-alt support-icon text-purple-500"></i>
+                    <h3 class="text-xl font-bold text-gray-900">改善保証</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="section-title text-gray-900">よくあるご質問</h2>
+            </div>
+
+            <div class="space-y-6">
+                <div class="bg-white rounded-lg p-6 shadow-lg">
+                    <h3 class="font-bold text-gray-900 mb-3 flex items-center">
+                        <i class="fas fa-question-circle text-blue-500 mr-3"></i>
+                        支援費用の目安を教えてください
+                    </h3>
+                    <p class="text-gray-700">基本プラン月額7万円〜（施設規模・支援内容により調整）。改善効果が出始めてからの継続的なパートナーシップを重視しています。</p>
+                </div>
+
+                <div class="bg-white rounded-lg p-6 shadow-lg">
+                    <h3 class="font-bold text-gray-900 mb-3 flex items-center">
+                        <i class="fas fa-question-circle text-blue-500 mr-3"></i>
+                        開業前の施設でも相談できますか？
+                    </h3>
+                    <p class="text-gray-700">はい、開業準備段階からのサポートも可能です。立地選定・設計段階からマーケティング戦略まで、開業成功に必要な全てをサポートします。</p>
+                </div>
+
+                <div class="bg-white rounded-lg p-6 shadow-lg">
+                    <h3 class="font-bold text-gray-900 mb-3 flex items-center">
+                        <i class="fas fa-question-circle text-blue-500 mr-3"></i>
+                        どの程度の期間で改善効果が現れますか？
+                    </h3>
+                    <p class="text-gray-700">集客面では2〜3ヶ月、売上・稼働率面では4〜6ヶ月で明確な改善を実感いただけます。ただし、現在の施設状況により異なるため、現実的な目標設定と段階的改善を重視しています。</p>
+                </div>
+
+                <div class="bg-white rounded-lg p-6 shadow-lg">
+                    <h3 class="font-bold text-gray-900 mb-3 flex items-center">
+                        <i class="fas fa-question-circle text-blue-500 mr-3"></i>
+                        支援期間中に目標が達成できない場合は？
+                    </h3>
+                    <p class="text-gray-700">目標達成まで支援を継続します。途中で投げ出すことはありません。場合によっては戦略の見直しや追加施策を無償で提供し、必ず改善効果を出すまで伴走します。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Limited Offer Section -->
+    <section class="py-20 cta-bg text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">
+                    <i class="fas fa-gift mr-4"></i>
+                    運営改善特別支援パッケージ
+                </h2>
+                <p class="text-2xl mb-8">先着5社限定</p>
+                
+                <div class="grid grid-cols-1 gap-6 mb-12">
+                    <div class="bg-white bg-opacity-20 rounded-lg p-6 backdrop-blur">
+                        <h3 class="text-xl font-bold mb-4">
+                            <i class="fas fa-check-circle mr-2"></i>業務代行サービス
+                        </h3>
+                        <p>初月無料、2ヶ月目50%OFF</p>
+                    </div>
+                </div>
+
+                <div class="mb-8">
+                    <h3 class="text-2xl font-bold mb-4">
+                        <i class="fas fa-clock mr-2"></i>今すぐ改善に取り組むべき理由
+                    </h3>
+                    <ul class="text-lg space-y-2 max-w-2xl mx-auto">
+                        <li>• グランピング施設の競争激化（年間新規開業施設数300件増）</li>
+                        <li>• 繁忙期に向けた改善準備の必要性</li>
+                        <li>• 早期改善による競合優位性確保</li>
+                        <li>• 実証済み改善ノウハウを学べる最後のタイミング</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="section-title text-gray-900">
+                    売上・稼働率改善の無料相談はこちら
+                </h2>
+            </div>
+
+            <div class="max-w-lg mx-auto text-center">
+                <h3 class="text-2xl font-bold text-gray-900 mb-6">まずは気軽に相談したい方</h3>
+                <a href="#contact" class="btn-primary text-xl px-12 py-6 inline-block">
+                    無料相談を受ける<br>
+                    <small class="text-sm">（60分・オンライン可）</small>
+                </a>
+                <p class="text-gray-600 mt-4">
+                    現状分析から改善提案まで、初回相談は完全無料でご利用いただけます
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="py-20 bg-gray-100">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="price-highlight">
+                <div class="price-amount">70,000円〜</div>
+                <p class="text-xl mt-4">月額基本プラン（施設規模・支援内容により調整）</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section id="contact" class="py-20 bg-gray-100">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="section-title text-gray-900">無料相談</h2>
+                <p class="text-xl text-gray-600">まずはお気軽にご相談ください。現状分析から改善提案まで初回は完全無料です。</p>
+            </div>
+
+            <div class="contact-form">
+                <form class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">お名前 *</label>
+                            <input type="text" required class="form-input">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">会社名</label>
+                            <input type="text" class="form-input">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">メールアドレス *</label>
+                            <input type="email" required class="form-input">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">施設の状況 *</label>
+                        <select required class="form-select">
+                            <option value="">選択してください</option>
+                            <option value="operating-new">運営中（1年未満）</option>
+                            <option value="operating-established">運営中（1年以上）</option>
+                            <option value="struggling">運営課題あり・改善必要</option>
+                            <option value="planning">開業を検討中</option>
+                            <option value="construction">建設・準備中</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">ご相談内容 *</label>
+                        <select required class="form-select">
+                            <option value="">選択してください</option>
+                            <option value="free-diagnosis">無料診断・相談</option>
+                            <option value="detailed-consultation">詳細サービス説明</option>
+                            <option value="materials">資料請求</option>
+                            <option value="webinar">ウェビナー参加</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">現在の運営課題・ご質問</label>
+                        <textarea rows="5" class="form-textarea" placeholder="現在お困りの運営課題（稼働率、売上、コスト等）や、ご質問などがございましたらお聞かせください"></textarea>
+                    </div>
+
+                    <div class="text-center">
+                        <button type="submit" class="btn-primary text-lg px-12 py-4">
+                            <i class="fas fa-paper-plane mr-2"></i>
+                            無料相談する
+                        </button>
+                        <p class="text-sm text-gray-500 mt-4">
+                            * は必須項目です。ご入力いただいた情報は厳重に管理し、営業目的以外には使用いたしません。
+                        </p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p>&copy; 2025 HandS株式会社. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationPlayState = 'running';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            el.style.animationPlayState = 'paused';
+            observer.observe(el);
+        });
+
+        // Stats counter animation
+        function animateCounter(el, target, suffix) {
+            let current = 0;
+            const increment = target / 100;
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    el.textContent = target + suffix;
+                    clearInterval(timer);
+                } else {
+                    el.textContent = Math.floor(current) + suffix;
+                }
+            }, 20);
+        }
+
+        // Trigger counter animation when stats section is visible
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const counters = entry.target.querySelectorAll('.stats-counter');
+                    counters.forEach(counter => {
+                        const target = parseInt(counter.getAttribute('data-target'));
+                        const suffix = counter.getAttribute('data-suffix') || '';
+                        animateCounter(counter, target, suffix);
+                    });
+                    statsObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        const statsSection = document.querySelector('#results');
+        if (statsSection) {
+            statsObserver.observe(statsSection);
+        }
+
+        // Form submission handling
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('お問い合わせありがとうございます。担当者より24時間以内にご連絡いたします。');
+        });
+    </script>
+</body>
+</html>
