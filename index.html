@@ -753,11 +753,14 @@
 
             <div class="contact-form">
                 <form name="contact"
-                        method="POST"
-                        data-netlify="true"
-                        netlify-honeypot="bot-field"
-                        class="space-y-6">
-                  <!-- Netlify がフォームを検出する hidden 要素 -->
+                    method="POST"
+                    action="thanks.html"
+                    data-netlify="true"
+                    netlify-honeypot="bot-field"
+                    class="space-y-6">
+
+                               
+                 <!-- Netlify がフォームを検出する hidden 要素 -->
             <input type="hidden" name="form-name" value="contact" />
 
                   <!-- スパム BOT 対策の honeypot（画面には出ません）-->
@@ -773,8 +776,8 @@
                             <input type="text"  name="name"   required class="form-input">
                         </div>
                         <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-2">会社名</label>
-                            <input type="text"  name="name"   required class="form-input">
+                            <label class="block text-sm font-medium text-gray-700 mb-2">会社名*</label>
+                            <input type="text"  name="company_name"   required class="form-input">
                         </div>
                     </div>
 
@@ -904,10 +907,7 @@
         }
 
         // Form submission handling
-        document.querySelector('form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('お問い合わせありがとうございます。担当者より24時間以内にご連絡いたします。');
-        });
+        // フォーム送信 handling を削除（Netlifyフォームとして送信させるため）
     </script>
 </body>
 </html>
